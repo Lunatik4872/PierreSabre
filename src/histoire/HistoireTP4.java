@@ -7,11 +7,11 @@ import personnages.Yakuza;
 
 public class HistoireTP4 {
 	public static void main(String[] args) {
+		Humain prof = new Humain("Prof", "kombucha", 54);
 		Commercant marco = new Commercant("Marco", "the", 15);
-		Yakuza yln = new Yakuza("Yaku Le Noir", "whisky", 30, "Benarlermite");
-		Ronin roro = new Ronin("Roro", "shochu", 1000);
+		Yakuza yln = new Yakuza("Yaku Le Noir", "whisky", 45, "Benarlermite");
+		Ronin roro = new Ronin("Roro", "shochu", 10);
 		
-//		Humain prof = new Humain("Prof", "kombucha", 54);
 //		prof.direBonjour();
 //		prof.acheter("une boisson", 12);
 //		prof.boire();
@@ -26,9 +26,14 @@ public class HistoireTP4 {
 //		yln.direBonjour();
 //		yln.extorquer(marco);
 		
-		roro.direBonjour();
-		roro.donner(marco);
+//		roro.direBonjour();
+//		roro.donner(marco);
+//		roro.donner(marco);
 		
+		roro.provoquer(yln);
+		System.out.println(roro.getArgent());
+		System.out.println(yln.getArgent());
+
 	}
 
 }
