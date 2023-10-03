@@ -50,5 +50,11 @@ public class Humain {
 			parler("Je n'ai plus que "+argent+" sous en poche. Je ne peux meme pas m'offrir "+bien+" a "+prix+" sous");
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "[nom=" + nom + ", boisson_fav=" + boisson_fav + ", argent=" + argent + "]";
+	}
+	
 	
 }
