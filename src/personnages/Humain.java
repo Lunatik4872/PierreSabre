@@ -53,7 +53,7 @@ public class Humain {
 
 	@Override
 	public String toString() {
-		return "[nom=" + nom + ", boisson_fav=" + boisson_fav + ", argent=" + argent + "]";
+		return "[nom = " + nom + ", boisson_fav = " + boisson_fav + ", argent = " + argent + "]";
 	}
 	
 	
