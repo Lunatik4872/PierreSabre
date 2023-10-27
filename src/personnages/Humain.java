@@ -29,7 +29,7 @@ public class Humain {
 	}
 	
 	public void direBonjour() {
-		parler("Bonjour ! Je m'appelle "+nom+ " et j'aime boire du "+boisson_fav);
+		parler(toString());
 	}
 	
 	public void boire() {
@@ -98,7 +98,7 @@ public class Humain {
 
 	@Override
 	public String toString() {
-		return "[nom = " + nom + ", boisson_fav = " + boisson_fav + ", argent = " + argent + "]";
+		return "Bonjour ! Je m'appelle " + nom + " et j'aime boire du " + boisson_fav;
 	}
 	
 	

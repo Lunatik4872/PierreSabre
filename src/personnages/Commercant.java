@@ -17,11 +17,4 @@ public class Commercant extends Humain {
 		this.gagnerArgent(argent);
 		this.parler(argent + " sous ! Je te remercie genereux donateur!");
 	}
-
-	@Override
-	public String toString() {
-		String etat = super.toString();
-		return "Commercant "
-				+ etat.substring(1,etat.length()-1);
-	}
 }
