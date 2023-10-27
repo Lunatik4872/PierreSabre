@@ -2,9 +2,12 @@ package personnages;
 
 public class Humain {
 	
+	private final int nbMaxConnaissance = 3;
 	private String nom;
 	private String boisson_fav;
 	private int argent;
+	protected int nbConnaissance = 0;
+	protected Humain[] Connaissance = new Humain[nbMaxConnaissance];
 	
 	public Humain(String nom, String boisson_fav, int argent) {
 		super();
@@ -49,6 +52,48 @@ public class Humain {
 		else {
 			parler("Je n'ai plus que "+argent+" sous en poche. Je ne peux meme pas m'offrir "+bien+" a "+prix+" sous");
 		}
+	}
+	
+	public void repondre (Humain autreHumain) {
+		this.direBonjour();
+		autreHumain.memoriser(this);
+		this.memoriser(autreHumain);
+	}
+	
+	public void memoriser(Humain autreHumain) {
+		if (nbConnaissance < nbMaxConnaissance) {
+			Connaissance[nbConnaissance] = autreHumain;
+			nbConnaissance++;
+		}
+		
+		else {
+			Humain[] new_Connaissance = new Humain[nbMaxConnaissance];
+			
+			for (int i = 1; i < nbMaxConnaissance; i++) {
+				new_Connaissance[i-1] = Connaissance[i];
+			}
+			
+			new_Connaissance[nbMaxConnaissance-1] = autreHumain;
+			Connaissance = new_Connaissance;
+		}
+	}
+	
+	public void faireConnaissanceAvec(Humain autreHumain) {
+		this.direBonjour();
+		autreHumain.repondre(this);
+	}
+	
+	public void listerConnaissance() {
+		if (nbConnaissance == 0){
+			System.out.println("Je ne connais personne triste :( !");
+		}
+		else {
+			System.out.print("Je ne connais beaucoup de monde comme : ");
+			for (int i = 0; i < nbConnaissance; i++) {
+				System.out.print(Connaissance[i].getNom()+" ");
+			}
+			System.out.println("");
+		}			
 	}
 
 	@Override
