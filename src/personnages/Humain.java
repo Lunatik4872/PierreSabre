@@ -25,11 +25,11 @@ public class Humain {
 	}
 	
 	public void parler(String texte){
-		System.out.println(texte);
+		System.out.println("("+nom+")-"+texte);
 	}
 	
 	public void direBonjour() {
-    	parler("("+nom+")-"+toString());
+    	parler(toString());
 	}
 	
 	public void boire() {
@@ -85,10 +85,10 @@ public class Humain {
 	
 	public void listerConnaissance() {
 		if (nbConnaissance == 0){
-			System.out.println("("+nom+")-Je ne connais personne triste :( !");
+			parler("Je ne connais personne triste :( !");
 		}
 		else {
-			System.out.print("("+nom+")-Je ne connais beaucoup de monde comme : ");
+			parler("Je ne connais beaucoup de monde comme : ");
 			for (int i = 0; i < nbConnaissance; i++) {
 				System.out.print(Connaissance[i].getNom()+" ");
 			}
