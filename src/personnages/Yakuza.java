@@ -45,6 +45,6 @@ public class Yakuza extends Humain {
 	@Override
 	public String toString() {
 		String etat = super.toString();
-		return etat.substring(0,etat.length()-1) + " Mon clan est celui de "+clan;
+		return etat.substring(0,etat.length()) + "\n(" + getNom() + ")-Mon clan est celui de " + clan;
 	}
 }
