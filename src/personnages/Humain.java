@@ -2,7 +2,7 @@ package personnages;
 
 public class Humain {
 	
-	private final int nbMaxConnaissance = 3;
+	private final int nbMaxConnaissance = 30;
 	private String nom;
 	private String boisson_fav;
 	private int argent;
